@@ -1,0 +1,4 @@
+<form method=post action=@{actionR} encType=#{encoding}>
+      <h1> Crear un Mazo
+      ^{widget}
+      <button href=@{MazoNewR} .btn .btn-default> Crear

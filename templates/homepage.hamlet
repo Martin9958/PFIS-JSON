@@ -1,0 +1,27 @@
+<div .masthead>
+    <div .container>
+        <div .row>
+            <h1 .header>
+                MyYugi-OH Generator
+
+        <br>
+        <br>
+
+        <div .row>
+            <form action="/mazoNew">
+                <input type="submit" value="Crear Mazo" .btn .btn-danger />
+
+        <div .row>
+            <form action="/mazolist">
+                <input type="submit" value="Listado de Mazos" .btn .btn-danger />
+        <div .row>
+            <form action="/cartaNew">
+                <input type="submit" value="Agregar Carta Al inventario" .btn .btn-danger />
+
+        <div .row>
+            <form action="/cartaslist">
+                <input type="submit" value="Listado de Cartas" .btn .btn-danger />
+
+        <div .row>
+            <form action="/cartaSearch">
+                <input type="submit" value="Buscar Cartas" .btn .btn-danger />

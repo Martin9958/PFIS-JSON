@@ -1,0 +1,5 @@
+<form method=post action=@{actionR} encType=#{encoding}>
+      <h1> Adiciona una carta Nueva a tu mazo
+      <h3> Recuerda si es una carta magica o trampa puedes dejar vacios los espacios de: Nivel, Ataque y Defensa
+      ^{widget}
+      <button href=@{CartaNewR} .btn .btn-success> <span .glyphicon .glyphicon-floppy-saved>Agregar

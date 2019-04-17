@@ -1,0 +1,32 @@
+<div>
+
+<h1> Mazos
+$if null mazos
+    <p> No hay mazos ingresados
+$else
+    <table .table .table-responsive .table-hover>
+        <thead>
+                     <th> Nombre del mazo
+                     <th> Numero de cartas
+                     <th>
+                     <th>
+
+
+        $forall Entity mazoId mazo <- mazos
+
+            <tbody>
+                <tr>
+                    <td>
+                        #{mazoNombremazo mazo}
+
+                    <td>
+                        #{mazoCantidad  mazo}
+
+
+                    <td>
+                          <form action="@{MazoDeleteR mazoId}" method="post">
+                                                     <input type="submit" name="upvote" value="Borrar Mazo" />
+
+                    <td>
+                          <form action="@{CartaNewR}" method="get">
+                                <input type="submit" name="upvote" value="Agregar Carta" />
