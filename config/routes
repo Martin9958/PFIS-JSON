@@ -28,3 +28,17 @@
 /cartaEdit/#CartaId CartaEditR GET POST
 
 /cartaSearch CartaSearchR GET POST
+
+/cartasJson CartasJsonR GET POST
+
+/cartasJson/#CartaId CartaJsonR GET PUT DELETE
+
+/mazosJson MazosJsonR GET POST
+
+/mazosJson/#MazoId MazoJsonR GET PUT DELETE
+
+/mazoEdit/#MazoId MazoEditR GET POST
+
+/mazoSearch MazoSearchR GET POST
+
+

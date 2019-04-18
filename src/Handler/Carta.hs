@@ -114,3 +114,38 @@ postCartaSearchR = do
                      _ -> defaultLayout $ do
                         let actionR = CartaSearchR
                         $(widgetFile "Carta")
+
+--JSON CRUD
+
+getCartasJsonR :: Handler Value
+getCartasJsonR = do
+    cartas <- runDB $ selectList [] [] :: Handler [Entity Carta]
+
+    return $ object ["cartas" .= cartas]
+
+postCartasJsonR :: Handler Value
+postCartasJsonR = do
+    carta <- requireJsonBody :: Handler Carta
+    _    <- runDB $ insert carta
+
+    sendResponseStatus status201 ("CREATED" :: Text)
+
+getCartaJsonR :: CartaId -> Handler Value
+getCartaJsonR cartaId = do
+    carta <- runDB $ get404 cartaId
+
+    return $ object ["cartas" .= (Entity cartaId carta)]
+
+putCartaJsonR :: CartaId -> Handler Value
+putCartaJsonR cartaId = do
+    carta <- requireJsonBody :: Handler Carta
+
+    runDB $ replace cartaId carta
+
+    sendResponseStatus status200 ("UPDATED" :: Text)
+
+deleteCartaJsonR :: CartaId -> Handler Value
+deleteCartaJsonR cartaId = do
+    runDB $ delete cartaId
+
+    sendResponseStatus status200 ("DELETED" :: Text)

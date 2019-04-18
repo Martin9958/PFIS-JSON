@@ -23,6 +23,7 @@ $else
                      <th>
 
 
+
         $forall Entity cartaId carta <- cartas
 
             <tbody>
@@ -60,7 +61,12 @@ $else
                               <span .glyphicon .glyphicon-edit>
                               Editar Carta
 
+
+
 <a  href=@{CartaNewR} .btn .btn-primary .pull-left>
                               <span .glyphicon .glyphicon-plus>
                               Crear
+
+
+
 

@@ -1,6 +1,9 @@
 <div>
 
 <h1> Mazos
+<a  href=@{MazoSearchR} .btn .btn-primary .pull-left>
+                              <span .glyphicon .glyphicon-search>
+                              Buscar
 $if null mazos
     <p> No hay mazos ingresados
 $else
@@ -8,6 +11,7 @@ $else
         <thead>
                      <th> Nombre del mazo
                      <th> Numero de cartas
+                     <th>
                      <th>
                      <th>
 
@@ -22,11 +26,21 @@ $else
                     <td>
                         #{mazoCantidad  mazo}
 
+                    <td>
+
+                          <a href=@{MazoEditR mazoId} .btn .btn-warning .pull-right>
+                              <span .glyphicon .glyphicon-edit>
+                              Editar Mazo
+
 
                     <td>
                           <form action="@{MazoDeleteR mazoId}" method="post">
-                                                     <input type="submit" name="upvote" value="Borrar Mazo" />
+                                                     <input type="submit" name="upvote" value="Eliminar Mazo" />
 
                     <td>
                           <form action="@{CartaNewR}" method="get">
-                                <input type="submit" name="upvote" value="Agregar Carta" />
+                                <input type="submit" name="upvote" value="Agregar Carta al mazo" />
+
+<a  href=@{MazoNewR} .btn .btn-primary .pull-left>
+                              <span .glyphicon .glyphicon-search>
+                              Crear
